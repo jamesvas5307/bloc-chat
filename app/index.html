@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="blocChat">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bloc Base Project</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <!-- Set Viewport to One -->
+  <meta name = "viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container">
+     <ng-include src="'/templates/sidenav.html'"><ng-include>
+   </div>
+    <div class="container">
+    <ui-view></ui-view>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDhyR_CHPcsrfFIf102OPdHbYNSv7DCQPw",
+        authDomain: "bloc-chat-f9180.firebaseapp.com",
+        databaseURL: "https://bloc-chat-f9180.firebaseio.com",
+        projectId: "bloc-chat-f9180",
+        storageBucket: "bloc-chat-f9180.appspot.com",
+        messagingSenderId: "230719163902"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/Chatrooms.js"></script>
+    <script src="scripts/controllers/LandingCtrl.js"></script>
+    <script src="scripts/controllers/SidenavCtrl.js"></script>
+</body>
+</html>

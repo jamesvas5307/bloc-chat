@@ -1,0 +1,8 @@
+<nav ng-controller="SidenavCtrl as sidenav">
+  <h1> Bloc Chat </h1>
+  <ul>
+    <li ng-repeat="room in sidenav.rooms">
+      <p> {{room.$value}} </p>
+    </li>
+  </ul>
+</nav>
