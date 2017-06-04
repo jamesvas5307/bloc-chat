@@ -1,6 +1,9 @@
 <nav ng-controller="SidenavCtrl as sidenav">
   <h1> Bloc Chat </h1>
   <ul>
+    <div ng-controller="ModalCtrl as modal">
+    <li class="btn btn-primary" ng-click="modal.open()">+ Add New Room</li>
+    </div>
     <li ng-repeat="room in sidenav.rooms">
       <p> {{room.$value}} </p>
     </li>

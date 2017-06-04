@@ -6,6 +6,11 @@
 
     Chatrooms.all = rooms;
 
+    Chatrooms.add = function(id){
+      var label = "room" + rooms.length;
+      rooms.$add(id);
+    }
+
     return Chatrooms;
   }
 
