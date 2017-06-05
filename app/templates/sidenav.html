@@ -5,7 +5,7 @@
     <li class="btn btn-primary" ng-click="modal.open()">+ Add New Room</li>
     </div>
     <li ng-repeat="room in sidenav.rooms">
-      <p> {{room.$value}} </p>
+      <p ng-click="sidenav.setActiveRoom()" data-id="{{room.$id}}"> {{room.$value}} </p>
     </li>
   </ul>
 </nav>

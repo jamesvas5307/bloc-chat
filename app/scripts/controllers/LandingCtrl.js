@@ -1,8 +1,10 @@
 (function(){
- function LandingCtrl(){
+ function LandingCtrl($scope, Chatrooms){
+   this.rooms = Chatrooms.all;
+
  }
  angular
   .module('blocChat')
-  .controller('LandingCtrl',LandingCtrl)
+  .controller('LandingCtrl',['$scope', 'Chatrooms',LandingCtrl])
 
 })();

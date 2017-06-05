@@ -1,0 +1,15 @@
+<div class="container landing col-md-8 offset-md-2" ng-controller="LandingCtrl as landing">
+  <h1>{{activeRoom}}</h1>
+  <table class="table table-striped" >
+    <tbody ng-repeat="message in activeRoomMessages">
+      <tr class="message row">
+        <td>
+          <h5>{{message.username}}
+            <span class="floatRight">{{message.sentAt}}</span>
+          <h5>
+          <p>{{message.content}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
