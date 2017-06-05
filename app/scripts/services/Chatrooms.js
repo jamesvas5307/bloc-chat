@@ -9,13 +9,24 @@
 
     Chatrooms.add = function(id){
       rooms.$add(id);
-    }
+    };
 
     Chatrooms.getMessages = function(id){
       var m = ref2.orderByChild("roomId").equalTo(id);
       m = $firebaseArray(m);
       return m;
-    }
+    };
+
+    Chatrooms.send = function(newMessage,activeRoom){
+      var user = window.localStorage.getItem('blocChatCurrentUser');
+      var settings = {
+        username: user,
+        sentAt: "12/29/2016",
+        content: newMessage,
+        roomId: activeRoom
+      };
+      messages.$add(settings);
+    };
 
     return Chatrooms;
   }

@@ -1,5 +1,5 @@
 <div class="container landing col-md-8 offset-md-2" ng-controller="LandingCtrl as landing">
-  <h1>{{activeRoom}}</h1>
+  <h1 class="activeRoom">{{activeRoom}}</h1>
   <table class="table table-striped" >
     <tbody ng-repeat="message in activeRoomMessages">
       <tr class="message row">
@@ -12,4 +12,12 @@
       </tr>
     </tbody>
   </table>
+  <footer>
+    <form class="form-group row">
+    <div class="inputs col-8">
+      <input class="form-control" id="new-message-form" type="text" placeholder="Write a message...">
+      <div ng-click="landing.newMessage()" class="btn-primary btn"> Submit </div>
+    </div>
+  </form>
+</footer>
 </div>

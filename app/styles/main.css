@@ -4,5 +4,14 @@
 }
 
 .floatRight{
- float:right;  
+ float:right;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+}
+
+footer .inputs{
+  display:inline-flex;
 }

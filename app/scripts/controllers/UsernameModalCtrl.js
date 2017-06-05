@@ -3,7 +3,6 @@
 
   this.ok = function(){
     var userName = document.querySelector("#username-form").value;
-    console.log(userName);
     if(userName){
     window.localStorage.setItem('blocChatCurrentUser', userName)
     $rootScope.modalInstance.close();

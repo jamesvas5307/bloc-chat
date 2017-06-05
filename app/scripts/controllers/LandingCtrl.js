@@ -1,8 +1,17 @@
 (function(){
- function LandingCtrl($scope ,Chatrooms){
+ function LandingCtrl(Chatrooms, $rootScope){
    this.rooms = Chatrooms.all;
+
+   this.newMessage = function(){
+     var message = document.querySelector("#new-message-form").value;
+     var activeRoom = $rootScope.activeId;
+     if(message){
+     Chatrooms.send(message,activeRoom);
+     document.querySelector("#new-message-form").value = "";
+   }
+  };
  }
- function BlocChatCookies($rootScope,$uibModal) {
+ function BlocChatCookies($uibModal) {
   var currentUser = window.localStorage.getItem('blocChatCurrentUser');
   if (!currentUser || currentUser === '') {
     $rootScope.modalInstance = $uibModal.open({
@@ -18,7 +27,7 @@
 }
  angular
   .module('blocChat')
-  .controller('LandingCtrl',['$scope', '$rootScope', '$uibModal', 'Chatrooms',LandingCtrl])
+  .controller('LandingCtrl',['Chatrooms','$rootScope','$uibModal' ,LandingCtrl])
   .run(BlocChatCookies);
 
 })();
