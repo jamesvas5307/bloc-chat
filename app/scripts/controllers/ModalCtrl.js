@@ -12,7 +12,7 @@
        });
      };
   this.ok = function(){
-    var roomName = document.querySelector("#new-chatroom-form").value;
+    var roomName = this.newChatroom;
     if(roomName){
     Chatrooms.add(roomName);
     $rootScope.modalInstance.close();

@@ -3,7 +3,7 @@
    this.rooms = Chatrooms.all;
 
    this.newMessage = function(){
-     var message = document.querySelector("#new-message-form").value;
+     var message = this.newmessage;
      var activeRoom = $rootScope.activeId;
      if(message){
      Chatrooms.send(message,activeRoom);
@@ -11,7 +11,7 @@
    }
   };
  }
- function BlocChatCookies($uibModal) {
+ function BlocChatCookies($uibModal, $rootScope) {
   var currentUser = window.localStorage.getItem('blocChatCurrentUser');
   if (!currentUser || currentUser === '') {
     $rootScope.modalInstance = $uibModal.open({
